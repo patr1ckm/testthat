@@ -9,9 +9,11 @@ expect_skip <- function(code, need_skip = TRUE) {
     },
     skip = function(e) NULL
   )
-
-  expect_equal(skipped, need_skip)
 }
+
+test_that("Package checks", {
+  expect_equal(skipped, need_skip)
+})
 
 test_that("Package checks", {
   expect_skip(skip_if_not_installed("testthat"), FALSE)
